@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const passport = require("passport");
-const pg = require('pg');
+const {Pool} = require('pg');
 
 const app = express();
 const port = 3000;
@@ -31,13 +31,18 @@ app.set('view engine', 'ejs');
 app.use(passport.initialize());
 app.use(passport.session());
 
-const db = new pg.Client({
-    user: "postgres",
-    host: "localhost",
-    database: "dramatics",
-    password: "April@17#21",
-    port: 1721
-});
+// const db = new pg.Client({
+//     user: "postgres",
+//     host: "localhost",
+//     database: "dramatics",
+//     password: "April@17#21",
+//     port: 1721
+// });
+
+
+const db = new Pool({
+  connectionString: process.env.POSTGRES_URL ,
+})
 
 db.connect();
 
