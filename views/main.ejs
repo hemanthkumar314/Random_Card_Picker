@@ -1,0 +1,400 @@
+
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+  <title>Dramatics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="./css/main.css">
+
+</head>
+<body>
+    <div>
+        <img src="./img/background.jpg" alt="" class="back">
+    </div>
+    <div >
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand dramatics" href="#" style="font-weight: bold;">Threatix Drama Club | IIITDM Kancheepuram</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>  <%= useraccount %></a></li>
+                        <li><a href="https://forms.gle/vhmwZNGx9MzTAu85A" target="_blank" class="google">Register</a></li> 
+                        <li>
+                            <form action="/logout" method="post">
+                                <button class="log"><span class="glyphicon glyphicon-log-out"></span>  logout</button>
+                            </form>
+                        </li>   
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="box1">
+                    <h4 style="margin-left: 4%;">  <p style="font-weight: bold;">NOTE:</p> 
+                        1.Make sure you have registered for the Event<br>
+                        2.Register to the event using same email-id which you have used to sign-in<br>
+                        3.You have only one choice to pick a card <br>
+                        4.Pick a card from the given set of cards <br>
+                        5.The story line will be displayed on your screen</h4>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3  col-sm-6 col-xs-6 ">
+                        <form action="/title" method="post">
+                            <div class="card" id="card1">
+                                <button class="card1 card2 card3 mobcard">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card " id="card2">
+                                <button class="card1 card2 mobcard">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card"id="card3">
+                                <button  class="card1 card2">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card4">
+                                <button class="card1  card2">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card5">
+                                <button class="card1 card3">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card6">
+                                <button class="card1">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card7">
+                                <button class="card1 card3">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card8">
+                                <button class="card1">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card9">
+                                <button class="card1">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card10">
+                                <button class="card1 card3">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card11">
+                                <button class="card1">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card12">
+                                <button class="card1">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card13">
+                                <button class="card1 card3">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card14">
+                                <button class="card1">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card15">
+                                <button class="card1">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card16">
+                                <button class="card1 card3">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card17">
+                                <button class="card1">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card18">
+                                <button class="card1">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card19">
+                                <button class="card1 card3">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card20">
+                                <button class="card1">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card21">
+                                <button class="card1 card4">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card22">
+                                <button class="card1 card4">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card23">
+                                <button class="card1 card4">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="col-lg-3 col-sm-6 col-xs-6">
+                        <form action="/title" method="post">
+                            <div class="card" id="card24">
+                                <button class="card1 card4">
+                                    <img src="./img/drama.jpg" alt="Card Image" class="width">
+                                    <div class="card-body"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="col-lg-3 sm-12">
+                <div class="box">
+                    <h3 class="event">Event Description</h3>
+                    <div class="h4">
+                        <h4>Step into the Stoplight at "Unknot the knot" where the story becomes the play! Choose your narrative adventure line from our exclusive website,receive it in your inbox of registered mail id ,transform it into a mesmerizing stage play act</h4>
+                    </div>
+                    <h4><a href="https://drive.google.com/file/d/1Pmj8lfz0q9gbh9uMqo2gfDem6vK_wPOn/view?usp=drive_link" style="text-decoration: none;font-weight: bold;" target="_blank">Rule Note</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+        <footer>
+            <h4 class="contact" >Contact Us</h4>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4>Vishnu Teja | +91-73966 52162 </h4>
+                    <h4>IIITDM Kancheepuram 
+                        <a href="https://www.iiitdm.ac.in/">https://www.iiitdm.ac.in/</a>
+                    </h4>
+                </div>
+
+                <div class="col-lg-6">
+                    <h4 style="font-weight: bold;">Event Coordinators</h4>
+                    <h4> Abhishek | +91-82698 56166</h4>
+                    <h4> Druika   | +91-93616 33759</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <a href="https://www.instagram.com/vishnutejachitrala?igsh=MWI3b3NvNTdhZDEyaQ==" target="_blank">
+                    <img src="./img/insta.jpeg" alt="insta" style="width: 7%;height: 8%;display: inline;"></a>
+                </div>
+                <div class="col-lg-6">
+                    <p><span class="glyphicon glyphicon-envelope"></span> CS21B1025@iiitdm.ac.in</p>
+                </div>
+            </div>
+        </footer>
+        
+        <script>
+            // let cardVisibility = {};
+
+            // if (localStorage.getItem('cardVisibility')) {
+            //     cardVisibility = JSON.parse(localStorage.getItem('cardVisibility'));
+            // } else {
+            //     for (let i = 1; i <= 24; i++) {
+            //         cardVisibility[`card${i}`] = true;
+            //     }
+            // }
+
+            // function toggleCard(cardId) {
+            //     const card = document.getElementById(cardId);
+            //     if (cardVisibility[cardId]) {
+            //         card.remove();
+            //     } else {
+            //         document.body.appendChild(card);
+            //     }
+            //     cardVisibility[cardId] = !cardVisibility[cardId];
+            //     localStorage.setItem('cardVisibility', JSON.stringify(cardVisibility));
+            // }
+
+            // window.onload = function() {
+            //     for (const [key, value] of Object.entries(cardVisibility)) {
+            //         if (!value) {
+            //             const card = document.getElementById(key);
+            //             card.remove();
+            //         }
+            //     }
+            //};
+
+        </script>
+
+        <script src="/index.js"></script>
+    
+</body>
+</html>
+
