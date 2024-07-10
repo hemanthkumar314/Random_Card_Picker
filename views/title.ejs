@@ -1,37 +1,57 @@
-<%- include('partials/header2') %>
+<%- include('partials/headertitle') %>
         <div>
             <img src="./img/background.jpg" alt="" class="back">
         </div>
         
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span> 
-                    </button>
-                    <a class="navbar-brand dramatics" href="#" style="font-weight: bold;">Threatix Drama Club | IIITDM Kancheepuram</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>  <%= useraccount %></a></li>
-                        <li><a href="https://forms.gle/vhmwZNGx9MzTAu85A" target="_blank" class="google">Register</a></li> 
-                        <li>
-                            <form action="/logout" method="post">
-                                <button class="log"><span class="glyphicon glyphicon-log-out"></span>  logout</button>
-                            </form>
-                        </li>     
-                    </ul>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Random Card Picker</a>
+            
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <!-- <a
+                  href="{{ url_for('auth.signup') }}"
+                  class="btn btn-outline-primary"
+                  role="button"
+                  
+                  >Signup</a
+                > -->
+                
+                <a
+                  href="#"
+                  class="btn btn-outline-primary"
+                  role="button"
+                  
+                  >SAVED</a
+                >
+
+                <a
+                  href=""
+                  class="btn btn-outline-danger"
+                  role="button"
+                  style="margin-left: 10px;"
+                  
+                  >Log Out</a
+                >
+              </form>
             </div>
-        </nav>
+          </nav>
 
         <div class="row">
             <div class="col-lg-9">
                 <div class="line">
-                    <!-- <h1>Ur Story Line</h1> -->
-                    <h2 ><%= pick %> </h2>
                     <h3 class="text"><%= title1 %></h3>
                 </div>
             </div>

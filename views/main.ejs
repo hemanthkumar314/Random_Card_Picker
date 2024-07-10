@@ -1,43 +1,59 @@
-
-<!-- <!DOCTYPE html> -->
-<html lang="en">
-<head>
-  <title>Dramatics</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" href="./css/main.css">
-
-</head>
-<body>
+<%- include('partials/headermain') %>
     <div>
         <img src="./img/background.jpg" alt="" class="back">
     </div>
     <div >
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span> 
-                    </button>
-                    <a class="navbar-brand dramatics" href="#" style="font-weight: bold;">Threatix Drama Club | IIITDM Kancheepuram</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>  <%= useraccount %></a></li>
-                        <li><a href="https://forms.gle/vhmwZNGx9MzTAu85A" target="_blank" class="google">Register</a></li> 
-                        <li>
-                            <form action="/logout" method="post">
-                                <button class="log"><span class="glyphicon glyphicon-log-out"></span>  logout</button>
-                            </form>
-                        </li>   
-                    </ul>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Random Card Picker</a>
+            
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <!-- <a
+                  href=""
+                  class="btn btn-outline-primary"
+                  role="button"
+                  
+                  >ADD</a
+                > -->
+
+                <!-- <a
+                  href=""
+                  class="btn btn-outline-primary"
+                  role="button"
+                  
+                  >DELETE</a
+                > -->
+                
+                <a
+                  href="#"
+                  class="btn btn-outline-primary"
+                  role="button"
+                  
+                  >SAVED</a
+                >
+
+                <a
+                  href="{{ url_for('auth.logout') }}"
+                  class="btn btn-outline-danger"
+                  role="button"
+                  style="margin-left: 10px;"
+                  
+                  >Log Out</a
+                >
+              </form>
             </div>
         </nav>
         
@@ -45,11 +61,10 @@
             <div class="col-lg-9">
                 <div class="box1">
                     <h4 style="margin-left: 4%;">  <p style="font-weight: bold;">NOTE:</p> 
-                        1.Make sure you have registered for the Event<br>
-                        2.Register to the event using same email-id which you have used to sign-in<br>
-                        3.You have only one choice to pick a card <br>
-                        4.Pick a card from the given set of cards <br>
-                        5.The story line will be displayed on your screen</h4>
+                        1.Make sure you have registered and Authenticated<br>
+                        2.You have choices to pick as many cards needed and save your favourites storylines<br>
+                        3.The story line will be displayed on your screen<br>
+                        4.Admin can add,edit or delete the storylines to keep content fresh</h4>
                 </div>
                 <div class="row">
                     <div class="col-lg-3  col-sm-6 col-xs-6 ">
@@ -332,30 +347,29 @@
         </div>
     </div>
         
-
         <footer>
             <h4 class="contact" >Contact Us</h4>
             <div class="row">
                 <div class="col-lg-6">
-                    <h4>Vishnu Teja | +91-73966 52162 </h4>
+                    <h4>B.Hemanth Kumar| +91-83419 47634 </h4>
                     <h4>IIITDM Kancheepuram 
                         <a href="https://www.iiitdm.ac.in/">https://www.iiitdm.ac.in/</a>
                     </h4>
                 </div>
 
-                <div class="col-lg-6">
-                    <h4 style="font-weight: bold;">Event Coordinators</h4>
-                    <h4> Abhishek | +91-82698 56166</h4>
-                    <h4> Druika   | +91-93616 33759</h4>
-                </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <a href="https://www.instagram.com/vishnutejachitrala?igsh=MWI3b3NvNTdhZDEyaQ==" target="_blank">
                     <img src="./img/insta.jpeg" alt="insta" style="width: 7%;height: 8%;display: inline;"></a>
                 </div>
-                <div class="col-lg-6">
-                    <p><span class="glyphicon glyphicon-envelope"></span> CS21B1025@iiitdm.ac.in</p>
+                <div class="col-lg-4">
+                    <a href="https://www.instagram.com/vishnutejachitrala?igsh=MWI3b3NvNTdhZDEyaQ==" target="_blank">
+                    <img src="./img/insta.jpeg" alt="insta" style="width: 7%;height: 8%;display: inline;"></a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="https://www.instagram.com/vishnutejachitrala?igsh=MWI3b3NvNTdhZDEyaQ==" target="_blank">
+                    <img src="./img/insta.jpeg" alt="insta" style="width: 7%;height: 8%;display: inline;"></a>
                 </div>
             </div>
         </footer>

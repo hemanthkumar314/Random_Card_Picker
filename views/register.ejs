@@ -1,0 +1,46 @@
+<%- include('partials/headerregister') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+
+        </div>
+
+        <div class="col-lg-6 d-flex align-items-center justify-content-center right-side">
+            <div class="form-2-wrapper">
+                <div class="logo text-center">
+                    <h2>Logo</h2>
+                </div>
+                <h2 class="text-center mb-4">SignUp Your Account</h2>
+                <form action="/register" method="post">
+                    <div class="mb-3 form-box">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
+                    </div>
+                    <div class="mb-3 form-box">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Your Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <div class="dropdown">
+                            <button class="dropbtn">Account</button>
+                            <div class="dropdown-content">
+                              <a href="#">User</a>
+                              <a href="#">Admin</a>
+                            </div>
+                          </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-secondary login-btn w-100 mb-3">Sign Up</button>
+
+                </form>
+    
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<script src="index.js"></script>
+
+<%- include('partials/footer') %>

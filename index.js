@@ -9,7 +9,6 @@ const port = 3000;
 
 const sessionSecret ="your_secret_key";
 
-// Set up session middleware
 app.use(
     session({
         secret: sessionSecret,
@@ -18,31 +17,23 @@ app.use(
     })
 );
 
-// Set up body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve static files from the 'public' directory
 app.use(express.static("public"));
 
-// Set up rendering engine
 app.set('view engine', 'ejs');
 
-// Set up Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
 
-// const db = new pg.Client({
-//     user: "postgres",
-//     host: "localhost",
-//     database: "dramatics",
-//     password: "April@17#21",
-//     port: 1721
-// });
+const db = new pg.Client({
+    user: "postgres",
+    host: "localhost",
+    database: "dramatics",
+    password: "April@17#21",
+    port: 1721
+});
 
-
-const db = new Pool({
-  connectionString: process.env.POSTGRES_URL ,
-})
 
 db.connect();
 
@@ -56,6 +47,7 @@ app.post("/register", async (req, res) => {
     const user = req.body.username;
     const email = req.body.email;
     const pass = req.body.password;
+    const account = req.body.account;
     const storyline = "story line";
 
     try {
@@ -138,7 +130,6 @@ app.post("/title", async (req, res) => {
 
             res.render("title.ejs", {
                 useraccount: user_email,
-                pick:'Your Story line',
                 title1: line
             });
         }
@@ -148,7 +139,6 @@ app.post("/title", async (req, res) => {
     }
 });
 
-// Start server
 app.listen(port, () => {
     console.log(`App listening on port ${port}!`);
 });
