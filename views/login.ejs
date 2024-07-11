@@ -20,13 +20,11 @@
                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter Your Password" required>
                     </div>
                     <div class="mb-3">
-                        <div class="dropdown">
-                            <button class="dropbtn">Account</button>
-                            <div class="dropdown-content">
-                              <a href="#">User</a>
-                              <a href="#">Admin</a>
-                            </div>
-                          </div>
+                        Account:<select name="account" id="account">
+                            <option value="" selected="selected" name="selected">Select account</option>
+                            <option value="User" selected="User" name="User">User</option>
+                            <option value="Admin" selected="Admin" name="Admin">Admin</option>
+                          </select>
                     </div>
                     <div class="mb-3">
                     <div class="form-check">

@@ -4,7 +4,7 @@
     </div>
     <div >
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Random Card Picker</a>
+            <a class="navbar-brand" href="main.ejs">Random Card Picker</a>
             
             <button
               class="navbar-toggler"
@@ -21,32 +21,20 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <!-- <a
-                  href=""
-                  class="btn btn-outline-primary"
-                  role="button"
-                  
-                  >ADD</a
-                > -->
-
-                <!-- <a
-                  href=""
-                  class="btn btn-outline-primary"
-                  role="button"
-                  
-                  >DELETE</a
-                > -->
-                
+                <% if (account) { %>
+                    <a href="add.ejs" class="btn btn-outline-primary" role="button">ADD</a>
+                    <a href="delete.ejs" class="btn btn-outline-primary" role="button">DELETE</a>
+                <% } %>
+                    
                 <a
-                  href="#"
+                  href=""
                   class="btn btn-outline-primary"
                   role="button"
-                  
                   >SAVED</a
                 >
 
                 <a
-                  href="{{ url_for('auth.logout') }}"
+                  href=""
                   class="btn btn-outline-danger"
                   role="button"
                   style="margin-left: 10px;"
@@ -61,7 +49,7 @@
             <div class="col-lg-9">
                 <div class="box1">
                     <h4 style="margin-left: 4%;">  <p style="font-weight: bold;">NOTE:</p> 
-                        1.Make sure you have registered and Authenticated<br>
+                        1.Make sure you are registered and Authenticated<br>
                         2.You have choices to pick as many cards needed and save your favourites storylines<br>
                         3.The story line will be displayed on your screen<br>
                         4.Admin can add,edit or delete the storylines to keep content fresh</h4>
@@ -374,39 +362,6 @@
             </div>
         </footer>
         
-        <script>
-            // let cardVisibility = {};
-
-            // if (localStorage.getItem('cardVisibility')) {
-            //     cardVisibility = JSON.parse(localStorage.getItem('cardVisibility'));
-            // } else {
-            //     for (let i = 1; i <= 24; i++) {
-            //         cardVisibility[`card${i}`] = true;
-            //     }
-            // }
-
-            // function toggleCard(cardId) {
-            //     const card = document.getElementById(cardId);
-            //     if (cardVisibility[cardId]) {
-            //         card.remove();
-            //     } else {
-            //         document.body.appendChild(card);
-            //     }
-            //     cardVisibility[cardId] = !cardVisibility[cardId];
-            //     localStorage.setItem('cardVisibility', JSON.stringify(cardVisibility));
-            // }
-
-            // window.onload = function() {
-            //     for (const [key, value] of Object.entries(cardVisibility)) {
-            //         if (!value) {
-            //             const card = document.getElementById(key);
-            //             card.remove();
-            //         }
-            //     }
-            //};
-
-        </script>
-
         <script src="/index.js"></script>
     
 </body>
