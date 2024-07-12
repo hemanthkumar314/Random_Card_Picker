@@ -1,22 +1,23 @@
 body{
-  overflow:hidden;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('/public/img/loginback.jpg');
+  background: url('../img/loginback.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .form-2-wrapper {
-  background: #9d00ff29;
+  width:80%;
+  background: #EECEB9;
+  opacity:0.9;
   padding: 50px;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 input.form-control{
   padding: 11px;
@@ -38,46 +39,11 @@ button.login-btn{
   color: #fff;
   border: none;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .register-test a{
   color: #000;
 }
 .social-login button{
-  border-radius: 5px;
+  border-radius: 10px;
 }
-
-.dropbtn {
-  background-color: #F7E7DC;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #FFE9D0;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #FFE9D0;}

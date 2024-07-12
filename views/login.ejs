@@ -1,5 +1,4 @@
 <%- include('partials/headerlogin') %>
-
 <div class="container">
     <div class="row">
         <div class="col-lg-6">
@@ -8,9 +7,6 @@
 
         <div class="col-lg-6 d-flex align-items-center justify-content-center right-side">
             <div class="form-2-wrapper">
-                <div class="logo text-center">
-                    <h2>Logo</h2>
-                </div>
                 <h2 class="text-center mb-4">Login to Your Account</h2>
                 <form action="/login" method="post">
                     <div class="mb-3 form-box">
@@ -38,7 +34,9 @@
 
                 </form>
     
-                <p class="text-center register-test mt-3">Don't have an account? <a href="register.ejs" class="text-decoration-none">Signup here</a></p>
+                <p class="text-center register-test mt-3">Don't have an account? 
+                    <a href="/signup" class="text-decoration-none">Signup here</a>
+                </p>
             </div>
         </div>
     </div>
@@ -46,5 +44,6 @@
   
 
 <script src="index.js"></script>
+
 
 <%- include('partials/footer') %>

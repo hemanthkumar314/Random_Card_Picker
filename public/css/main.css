@@ -4,6 +4,10 @@
     
 }
 
+body{
+    overflow:screen;
+}
+
 .back{   
     width: 100%;
     height: 100%;
@@ -27,7 +31,7 @@ footer {
 
 .event
 {
-    color: red;
+    color: black;
 }
 
 
@@ -58,14 +62,15 @@ footer {
 }
 
 .box {
-    background-color: #e9e78d;
-    border: 1px solid black;
+    background-color: white;
+    border: 1px solid ;
+    box-shadow: 0px 30px 40px black;
     padding: 20px;
     margin-top: 30%;
     margin-bottom: 20px;
     margin-right: 7%;
-    border-radius: 3%;
-    height: 500px;
+    border-radius: 5px;
+    height: 400px;
     
   }
 
@@ -73,15 +78,16 @@ div .h4{
     line-height: 5.5px;
 }
 .box1 {
-    background-color: #e9e78d;
-    border: 1px solid black;
+    background-color: white;
+    border: 1px solid ;
+    box-shadow: 0px 30px 40px black;
     /* padding: 20px; */
-    margin-top: 10%;
+    margin-top: 3%;
     /* margin-bottom: 20px; */
-    margin-left: 8%;
-    border-radius: 4%;
+    margin-left: 3%;
+    border-radius: 5px;
     height: 160px;
-    width: 90%;
+    width: 80%;
   }
 
 
@@ -136,15 +142,16 @@ div .h4{
     margin-top: 35%;
 }
 .box1 {
-    background-color: #e9e78d;
-    border: 1px solid black;
+    background-color: white;
+    border: 1px solid ;
+    box-shadow: 0px 30px 40px black;
     /* padding: 20px; */
-    margin-top: 15%;
+    margin-top: 7%;
     /* margin-bottom: 20px; */
-    margin-left: 8%;
-    border-radius: 4%;
-    height: 200px;
-    width: 90%;
+    margin-left: 5%;
+    border-radius: 4px;
+    height: 180px;
+    width: 80%;
   }
 
 .card4{
@@ -153,7 +160,8 @@ div .h4{
 
 .box {
     background-color: #e9e78d;
-    border: 1px solid #ced4da;
+    border: 1px solid;
+    box-shadow: 0px 30px 40px black;
     padding: 20px;
     margin-top: 10%;
     margin-bottom: 20px;
@@ -163,4 +171,220 @@ div .h4{
     width: 70%;
   }
 
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    padding: 10px;
+    background-color: #FEFBD8;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 7px 5px 15px -4px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 7px 5px 15px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 5px 15px -4px rgba(0, 0, 0, 0.75);
+    font-family:"Montserrat"
+}
+
+.nav-items > ul > li {
+    position: relative;
+    display: inline;
+    list-style: none;
+    margin: 18px;
+    margin-left:30px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nav-items > ul > li > a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-items > ul > li::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.17rem;
+    background-color: #c52726;
+    left: 0;
+    bottom: 0;
+    transform-origin: 0% 100%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-items > ul > li:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-logo a,
+.nav-button a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+    /* display: flex; */
+}
+
+.nav-logo {
+    font-size: 25px;
+    margin-left:10px;
+}
+
+.nav-button {
+    background-color: #c52726;
+    border-radius: 10px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.anim-layer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-button:hover .anim-layer {
+    width: 100%;
+    left: 0;
+}
+
+.nav-button:hover a {
+    color: #141214;
+}
+
+.nav-button a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+#hamburger-menu,
+#mobile-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 770px) {
+    #mobile-menu {
+        background-color: #c52726;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+        transform: translateX(-100%);
+    }
+
+    .mobile-nav-items > ul {
+        padding: 0px;
+    }
+
+    .mobile-nav-items > ul > li {
+        text-align: center;
+        position: relative;
+        list-style: none;
+        margin: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .mobile-nav-items > ul > li > a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .mobile-nav-items > ul > li::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0.17rem;
+        background-color: white;
+        left: 0;
+        bottom: 0;
+        transform-origin: 0% 100%;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-nav-items > ul > li:hover::after {
+        transform: scaleX(1);
+    }
+
+    .mobile-nav-button {
+        background-color: #141214;
+        border-radius: 50px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .mobile-nav-button .anim-layer {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0;
+        height: 100%;
+        background-color: white;
+        transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .mobile-nav-button:hover .anim-layer {
+        width: 100%;
+        left: 0;
+    }
+
+    .mobile-nav-button:hover a {
+        color: #141214;
+    }
+
+    .mobile-nav-button a {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        position: relative;
+        z-index: 1;
+    }
+
+    .nav-items > ul,
+    .nav-button {
+        display: none;
+    }
+
+    #hamburger-cross {
+        display: block;
+        color: white;
+        cursor: pointer;
+        font-size: 40px;
+        position: absolute;
+        top: 20px;
+        right: 26px;
+    }
+
+    #hamburger-menu {
+        display: block;
+        color: white;
+        cursor: pointer;
+        font-size: 24px;
+    }
 }

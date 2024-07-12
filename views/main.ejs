@@ -1,58 +1,53 @@
 <%- include('partials/headermain') %>
     <div>
-        <img src="./img/background.jpg" alt="" class="back">
+        <img src="./img/background.avif" alt="" class="back">
     </div>
     <div >
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="main.ejs">Random Card Picker</a>
-            
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-      
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                <% if (account) { %>
-                    <a href="add.ejs" class="btn btn-outline-primary" role="button">ADD</a>
-                    <a href="delete.ejs" class="btn btn-outline-primary" role="button">DELETE</a>
-                <% } %>
-                    
-                <a
-                  href=""
-                  class="btn btn-outline-primary"
-                  role="button"
-                  >SAVED</a
-                >
-
-                <a
-                  href=""
-                  class="btn btn-outline-danger"
-                  role="button"
-                  style="margin-left: 10px;"
-                  
-                  >Log Out</a
-                >
-              </form>
+        <div class="navbar">
+            <div class="nav-logo">
+              <a href="/home">Random Card Picker</a>
             </div>
-        </nav>
+            <div class="nav-items">
+              <ul>
+                <% if (account) { %>
+                    <li><a href="/add">ADD</a></li>
+                    <li><a href="/delete">DELETE</a></li>
+                <% } %>
+                <li><a href="#"> Saved </a></li>
+              </ul>
+            </div>
+            <div class="nav-button">
+              <div class="anim-layer"></div>
+              <a href="#">Sign Up</a>
+            </div>
+            <div id="hamburger-menu">&#9776;</div>
+          </div>
+      
+          <div id="mobile-menu">
+            <div class="mobile-nav-items">
+              <ul>
+                <% if (account) { %>
+                    <li><a href="/add">ADD</a></li>
+                    <li><a href="/delete">DELETE</a></li>
+                <% } %>
+                <li><a href="#"> Saved </a></li>
+              </ul>
+            </div>
+            <div class="mobile-nav-button">
+              <div class="anim-layer"></div>
+              <a href="#">Sign Up</a>
+            </div>
+            <div id="hamburger-cross">&#10006;</div>
+          </div>
         
         <div class="row">
             <div class="col-lg-9">
                 <div class="box1">
-                    <h4 style="margin-left: 4%;">  <p style="font-weight: bold;">NOTE:</p> 
+                    <h4 style="margin-left: 4%;margin-top: 20px;">  <p style="font-weight: bold;">NOTE:</p> 
                         1.Make sure you are registered and Authenticated<br>
                         2.You have choices to pick as many cards needed and save your favourites storylines<br>
                         3.The story line will be displayed on your screen<br>
-                        4.Admin can add,edit or delete the storylines to keep content fresh</h4>
+                        4.Only Admin can add,edit or delete the storylines to keep content fresh</h4>
                 </div>
                 <div class="row">
                     <div class="col-lg-3  col-sm-6 col-xs-6 ">
@@ -325,43 +320,16 @@
 
             <div class="col-lg-3 sm-12">
                 <div class="box">
-                    <h3 class="event">Event Description</h3>
+                    <h3 class="event">Description</h3>
                     <div class="h4">
                         <h4>Step into the Stoplight at "Unknot the knot" where the story becomes the play! Choose your narrative adventure line from our exclusive website,receive it in your inbox of registered mail id ,transform it into a mesmerizing stage play act</h4>
                     </div>
-                    <h4><a href="https://drive.google.com/file/d/1Pmj8lfz0q9gbh9uMqo2gfDem6vK_wPOn/view?usp=drive_link" style="text-decoration: none;font-weight: bold;" target="_blank">Rule Note</a></h4>
                 </div>
             </div>
         </div>
     </div>
         
-        <footer>
-            <h4 class="contact" >Contact Us</h4>
-            <div class="row">
-                <div class="col-lg-6">
-                    <h4>B.Hemanth Kumar| +91-83419 47634 </h4>
-                    <h4>IIITDM Kancheepuram 
-                        <a href="https://www.iiitdm.ac.in/">https://www.iiitdm.ac.in/</a>
-                    </h4>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <a href="https://www.instagram.com/vishnutejachitrala?igsh=MWI3b3NvNTdhZDEyaQ==" target="_blank">
-                    <img src="./img/insta.jpeg" alt="insta" style="width: 7%;height: 8%;display: inline;"></a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="https://www.instagram.com/vishnutejachitrala?igsh=MWI3b3NvNTdhZDEyaQ==" target="_blank">
-                    <img src="./img/insta.jpeg" alt="insta" style="width: 7%;height: 8%;display: inline;"></a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="https://www.instagram.com/vishnutejachitrala?igsh=MWI3b3NvNTdhZDEyaQ==" target="_blank">
-                    <img src="./img/insta.jpeg" alt="insta" style="width: 7%;height: 8%;display: inline;"></a>
-                </div>
-            </div>
-        </footer>
-        
+        <script src="script.js"></script>
         <script src="/index.js"></script>
     
 </body>
