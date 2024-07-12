@@ -242,12 +242,18 @@ app.post("/deletesavedtitle", async (req, res) => {
 
 app.post("/addtitle",async(req,res)=>{
     const title=req.body.title;
+    console.log(title)
 
     try {
-        await db.query("INSERT INTO titles (title) VALUES ($1)" [title]);
-        res.render("main.ejs",{
-            status:"New StoryLine Added"
-        })
+        const res3 = await db.query("SELECT * FROM titles WHERE title = $1", [title]);
+
+        if (res3.rows.length > 0) {
+            res.json({ status: "exists", message: "Storyline already exists" });
+        } else {
+            await db.query("INSERT INTO titles (title) VALUES ($1)", [title]);
+            res.json({ status: "added", message: "Storyline added successfully" });
+        }
+        
     } catch (error) {
         console.error("Error:", error);
         res.status(500).send("Internal Server Error");
@@ -258,11 +264,18 @@ app.post("/deletetitle", async (req, res) => {
     const title = req.body.title;
 
     try {
-        await db.query("DELETE FROM titles WHERE title = $1", [title]);
-        await db.query("DELETE FROM saved WHERE title = $1", [title]);
-        res.render("main.ejs", {
-            status: "Mentioned StoryLine Deleted"
-        });
+        const res3 = await db.query("SELECT * FROM titles WHERE title = $1", [title]);
+
+        if (res3.rows.length===0)
+        {
+            res.json({status:'not'})
+        }
+        else{
+            await db.query("DELETE FROM titles WHERE title = $1", [title]);
+            await db.query("DELETE FROM saved WHERE title = $1", [title]);
+            
+            res.json({status:'exists'})
+        }
     } catch (error) {
         console.error("Error:", error);
         res.status(500).send("Internal Server Error");

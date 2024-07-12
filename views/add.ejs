@@ -1,4 +1,4 @@
-<%- include('partials/headertitle') %>
+<%- include('partials/headeradd') %>
         <div>
             <img src="./img/background.avif" alt="" class="back">
         </div>
@@ -19,7 +19,7 @@
               </div>
               <div class="nav-button">
                 <div class="anim-layer"></div>
-                <a href="#">Sign Up</a>
+                <a href="#">Log out</a>
               </div>
               <div id="hamburger-menu">&#9776;</div>
             </div>
@@ -40,9 +40,11 @@
 
         <div class="row story">
             <div class="col-lg-9">
-                <div class="line">
-                    
-                </div>
+              <form class="line" action="/addtitle" method="post" id="add_title">
+                <input class="intitle" type="text" name="title" id="title" placeholder="Enter the storyline to add to Database" required>
+                <button type="submit" class="btn btn-outline-secondary login-btn w-100 mb-3">Add</button>
+            </form>
+            
             </div>
             <div class="col-lg-3">
                 <div class="box">
@@ -53,5 +55,43 @@
         </div>
 
         <script src="/index.js"></script>
+        <script>
+          document.getElementById("add_title").addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const titleInput = document.getElementById("title");
+          const title = titleInput.value.trim();
+
+          if (!title) {
+              alert("Title is required");
+              return;
+          }
+
+          try {
+              const response = await fetch("/addtitle", {
+                  method: "POST",
+                  headers: {
+                      "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({ title })
+              });
+
+              const data = await response.json();
+              console.log(data.status)
+
+              if (data.status === "exists") {
+                  alert(data.message);
+                  titleInput.value=""
+              } else if (data.status === "added") {
+                  alert(data.message);
+                  titleInput.value = "";  
+              } else {
+                  alert("An error occurred. Please try again.");
+              }
+          } catch (error) {
+              console.error("Error:", error);
+              alert("An error occurred. Please try again.");
+          }
+      });
+        </script>
         
 <%- include('partials/footer') %>

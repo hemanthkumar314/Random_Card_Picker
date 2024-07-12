@@ -6,6 +6,7 @@
 
 body{
     overflow:screen;
+    font-family:"Montserrat";
 }
 
 .back{   
@@ -86,7 +87,7 @@ div .h4{
     /* margin-bottom: 20px; */
     margin-left: 3%;
     border-radius: 5px;
-    height: 160px;
+    height: 180px;
     width: 80%;
   }
 
