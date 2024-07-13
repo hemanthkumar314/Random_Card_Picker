@@ -91,13 +91,11 @@ app.post('/login', async (req, res) => {
 
     try {
         let result;
-        let typeacc;
-    
+
         if (account === 'User') {
             result = await db.query("SELECT * FROM users WHERE email = $1", [email]);
         } else if (account === 'Admin') {
             result = await db.query("SELECT * FROM admins WHERE email = $1", [email]);
-            typeacc = 'Admin';
         }
     
         if (result.rows.length > 0) {
@@ -107,12 +105,7 @@ app.post('/login', async (req, res) => {
                 req.session.user = { useremail: email,account:account};
                 console.log(req.session.user.useremail,req.session.user.account);
     
-                let renderOptions = { useraccount: email };
-                if (typeacc === 'Admin') {
-                    renderOptions.account = typeacc;
-                }
-    
-                res.render("main.ejs", renderOptions);
+                res.render("main.ejs",{ useraccount: email,account:account });
             } else {
                 res.status(401).send("Invalid Password!!");
             }
@@ -123,7 +116,6 @@ app.post('/login', async (req, res) => {
         console.error("Error:", error);
         res.status(500).send("Internal Server Error");
     }
-    
 });
 
 
@@ -142,11 +134,8 @@ app.post("/title", async (req, res) => {
         const line = result.rows[0].title;
         console.log(line);
 
-        let renderOptions = { useraccount: user_email,title1: line };
-        if (account1 === 'Admin') {
-            renderOptions.account = account1;
-        }
-
+        let renderOptions = { useraccount: user_email,title1: line,account:account1 };
+       
         res.render("title.ejs", renderOptions);
         
     } catch (error) {
@@ -180,8 +169,25 @@ app.get("/save", async (req, res) => {
     }
 });
 
-app.get("/check-saved-status",(req,res)=>{
-    res.json({ status: 'unsaved'});
+app.get("/check-saved-status",async(req,res)=>{
+    const user_email = req.session.user.useremail;
+    let id = ids[ids.length - 1];
+
+    try {
+        const result = await db.query("SELECT title FROM titles WHERE id=$1", [id]);
+        const line = result.rows[0].title;
+        console.log(line);
+
+        const resQuery = await db.query("SELECT * FROM saved WHERE email=$1 AND title=$2", [user_email, line]);
+        if (resQuery.rows.length > 0) {
+            res.json({ status: 'saved'});
+        } else {
+            res.json({ status: 'unsaved'});
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 })
 
 app.get("/home", (req, res) => {
@@ -191,6 +197,7 @@ app.get("/home", (req, res) => {
 
 app.get("/add", (req, res) => {
     const account=req.session.user.account;
+    console.log(account)
     res.render("add.ejs",{account:account});
 });
 
@@ -199,7 +206,7 @@ app.get("/delete", (req, res) => {
     res.render("delete.ejs",{account:account});
 });
 
-app.post("/savedtitles", async (req, res) => {
+app.get("/savedtitles", async (req, res) => {
     const user_email = req.session.user.useremail;
     const account = req.session.user.account;
     console.log(user_email);
@@ -209,11 +216,12 @@ app.post("/savedtitles", async (req, res) => {
 
         if (res3.rows.length > 0) {
             res.render("saved.ejs", {
-                lines: res3.rows 
+                lines: res3.rows,
+                account:account 
             });
         } else {
             res.render("saved.ejs", {
-                status:"NO SAVED STORYLINES TO DISPLAY" 
+                lines:res3.rows,
             });
         }
     } catch (error) {
@@ -231,9 +239,7 @@ app.post("/deletesavedtitle", async (req, res) => {
 
     try {
         await db.query("DELETE FROM saved WHERE title = $1 and email=$2", [title,user_email]);
-        res.render("main.ejs", {
-            status: "Mentioned StoryLine Deleted"
-        });
+        res.redirect('/savedtitles');
     } catch (error) {
         console.error("Error:", error);
         res.status(500).send("Internal Server Error");
@@ -282,7 +288,7 @@ app.post("/deletetitle", async (req, res) => {
     }
 });
 
-app.post("/logout", (req, res) => {
+app.get("/logout", (req, res) => {
     req.session.destroy((err) => {
         if (err) {
             console.error("Error:", err);

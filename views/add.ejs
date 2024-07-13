@@ -5,38 +5,41 @@
         
         <div >
           <div class="navbar">
-              <div class="nav-logo">
-                <a href="/home">Random Card Picker</a>
-              </div>
-              <div class="nav-items">
-                <ul>
-                  <% if (account) { %>
-                      <li><a href="/add">ADD</a></li>
-                      <li><a href="/delete">DELETE</a></li>
-                  <% } %>
-                  <li><a href="#"> Saved </a></li>
-                </ul>
-              </div>
-              <div class="nav-button">
-                <div class="anim-layer"></div>
-                <a href="#">Log out</a>
-              </div>
-              <div id="hamburger-menu">&#9776;</div>
+            <div class="nav-logo">
+              <a href="/home">Random Card Picker</a>
             </div>
-        
-            <div id="mobile-menu">
-              <div class="mobile-nav-items">
-                <ul>
-                  
-                  <li><a href="#"> Saved </a></li>
-                </ul>
-              </div>
-              <div class="mobile-nav-button">
-                <div class="anim-layer"></div>
-                <a href="#">Sign Up</a>
-              </div>
-              <div id="hamburger-cross">&#10006;</div>
+            <div class="nav-items">
+              <ul>
+                <% if (account==='Admin') { %>
+                    <li><a href="/add">ADD</a></li>
+                    <li><a href="/delete">DELETE</a></li>
+                <% } %>
+                <li><a href="#"> Saved </a></li>
+              </ul>
             </div>
+            <div class="nav-button">
+              <div class="anim-layer"></div>
+              <a href="/logout">Log out</a>
+            </div>
+            <div id="hamburger-menu">&#9776;</div>
+          </div>
+      
+          <div id="mobile-menu">
+            <div class="mobile-nav-items">
+              <ul>
+                <% if (account) { %>
+                    <li><a href="/add">ADD</a></li>
+                    <li><a href="/delete">DELETE</a></li>
+                <% } %>
+                <li><a href="#"> Saved </a></li>
+              </ul>
+            </div>
+            <div class="mobile-nav-button">
+              <div class="anim-layer"></div>
+              <a href="#">Sign Up</a>
+            </div>
+            <div id="hamburger-cross">&#10006;</div>
+          </div>
 
         <div class="row story">
             <div class="col-lg-9">
@@ -55,6 +58,7 @@
         </div>
 
         <script src="/index.js"></script>
+        <script src="script.js"></script>
         <script>
           document.getElementById("add_title").addEventListener("submit", async (event) => {
           event.preventDefault();

@@ -10,7 +10,7 @@
               </div>
               <div class="nav-items">
                 <ul>
-                  <% if (account) { %>
+                  <% if (account==='Admin') { %>
                       <li><a href="/add">ADD</a></li>
                       <li><a href="/delete">DELETE</a></li>
                   <% } %>
@@ -19,7 +19,7 @@
               </div>
               <div class="nav-button">
                 <div class="anim-layer"></div>
-                <a href="#">Log out</a>
+                <a href="/logout">Log out</a>
               </div>
               <div id="hamburger-menu">&#9776;</div>
             </div>
@@ -55,6 +55,7 @@
         </div>
 
         <script src="/index.js"></script>
+        <script src="./script.js"></script>
         <script>
           document.getElementById("delete_title").addEventListener("submit",async(event)=>{
             event.preventDefault();

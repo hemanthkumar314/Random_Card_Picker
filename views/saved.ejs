@@ -1,63 +1,57 @@
 <%- include('partials/headersaved') %>
-        <div>
-            <img src="./img/background.jpg" alt="" class="back">
-        </div>
-        
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="main.ejs">Random Card Picker</a>
-            
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+      <div>
+          <img src="./img/background.avif" alt="" class="back">
+      </div>
       
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+      <div>
+          <div class="navbar">
+              <div class="nav-logo">
+                <a href="/home">Random Card Picker</a>
+              </div>
+              <div class="nav-items">
+                <ul>
+                  <% if (account==='Admin') { %>
+                      <li><a href="/add">ADD</a></li>
+                      <li><a href="/delete">DELETE</a></li>
+                  <% } %>
+                  <li><a href="#"> Saved </a></li>
+                </ul>
+              </div>
+              <div class="nav-button">
+                <div class="anim-layer"></div>
+                <a href="/logout">Log out</a>
+              </div>
+              <div id="hamburger-menu">&#9776;</div>
+            </div>
+        
+            <div id="mobile-menu">
+              <div class="mobile-nav-items">
+                <ul>
                   <% if (account) { %>
-                    <a href="add.ejs" class="btn btn-outline-primary" role="button">ADD</a>
-                    <a href="delete.ejs" class="btn btn-outline-primary" role="button">DELETE</a>
-                  <% } %>  
-                  <!-- <a
-                    href="#"
-                    class="btn btn-outline-primary"
-                    role="button"
-                    >SAVED</a
-                  > -->
-
-                  <a
-                    href=""
-                    class="btn btn-outline-danger"
-                    role="button"
-                    style="margin-left: 10px;"
-                    
-                    >Log Out</a
-                  >
-              </form>
+                      <li><a href="/add">ADD</a></li>
+                      <li><a href="/delete">DELETE</a></li>
+                  <% } %>
+                  <li><a href="#"> Saved </a></li>
+                </ul>
+              </div>
+              <div class="mobile-nav-button">
+                <div class="anim-layer"></div>
+                <a href="#">Sign Up</a>
+              </div>
+              <div id="hamburger-cross">&#10006;</div>
             </div>
-          </nav>
-
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="line">
-                    <h3 class="text"><%= title1 %></h3>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="box">
-                    <h3>Event Description</h3>
-                    <h4>Step into the Stoplight at "Unknot the knot" where the story becomes the play! Choose your narrative adventure line from our exclusive website,receive it in your inbox of registered mail id ,transform it into a mesmerizing stage play act</h4>
-                    <h4><a href="https://drive.google.com/file/d/1Pmj8lfz0q9gbh9uMqo2gfDem6vK_wPOn/view?usp=drive_link" style="text-decoration: none;font-weight: bold;" target="_blank">Rule Note</a></h4>
-                </div>
-            </div>
-        </div>
+            <h2 style="margin: auto;align-items: center;color: antiquewhite;margin-left: 37%;">Saved Storylines</h2>
+            <% for (let line of lines) { %> 
+              <div class="line align-items-center justify-content-center">
+                  <h3 class="text"><%= line.title %></h3>
+                  <form action="/deletesavedtitle" method="POST" style="display: inline;">
+                      <input type="hidden" name="title" value="<%= line.title %>">
+                      <button type="submit" class="btn btn-online-danger" style="background-color: cornflowerblue; color: black; margin-bottom: 5px; margin-left: 80%;">Delete</button>
+                  </form>
+              </div>
+          <% } %>
+          
+          
 
         <script src="/index.js"></script>
 <%- include('partials/footer') %>
